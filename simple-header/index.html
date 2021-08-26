@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Header | HTML Basics</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles/atom-one-dark.min.css">
+    <script src="../styles/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+        <link rel="icon" href="../content/html-tag-icon.png">
+</head>
+<body>
+    <header id="header">
+        <div class="header-text">
+            <h2>HTML Basics</h2>
+            <h3>by Thierry</h3>
+        </div>
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../about">About</a></li>
+        </ul>
+    </header>
+    <main>
+    <div class="hero-tutorial">
+        <!-- CHANGE TO WHITE -->
+        <h1>How to make a simple header.</h1>
+    </div>
+    <div class="author2">
+        <div class="author">
+            <p>by Thierry Waters</p>
+            <img src="../content/thierry-waters-avater.jpg" alt="Thierry Waters Avatar">
+        </div>
+    </div>
+    <section class="article-section">
+        <p>In this tutorial, I am going to be showing you how to make a simple sticky header.</p>
+        <p>We're going to start by adding a div with a class of header.</p>
+        <p></p>
+
+        <pre><code>&lt;div class="header"&gt;&lt;/div&gt;</code></pre>
+        
+        <p>Next we are going to add some text inside the header. I'm going to use a <code>&lt;h3&gt;</code> tag.
+        After that we can add some nav links. To do this we must create an unorganised list <code>&lt;ul&gt;</code> and inside that we are going to add some list items <code>&lt;li&gt;</code>.</p>
+        <p>Your code should now look something like this.</p>
+
+        <pre><code>&lt;div class="header"&gt;
+    &lt;h3&gt;My Header&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+ &lt;/div&gt;</code></pre>
+        <p>This will create a list of all of our nav links.
+            Now we will add some anchor tags <code>&lt;a&gt;</code> inside of the list items <code>&lt;li&gt;</code> with a "#" as the href.
+        </p>
+        <pre><code class="language-html">&lt;div class="header"&gt;
+    &lt;h3&gt;My Header&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+ &lt;/div&gt;</code></pre>
+        <p>It should look like this now.</p>
+        <img alt="Header without CSS" src="../content/header-without-css.png">
+        <p>Now that we've got the outline done in HTML it's time to add some styles using CSS.</p>
+        <p>First set all of the margins and padding to 0</p>
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;    
+}
+</code></pre>
+
+        <p>In your CSS you will want to add a <code>height</code> of <code>50px</code> to the class "header". Then choose a background color, I chose gray, and a foreground color, I chose white. Your CSS should look like this.</p>
+            <pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    height: 50px;
+    background: gray;
+    color: white;
+}</code></pre>
+<p>Then in the class header add <code class="language-css">display: flex;</code>, this will make the items in "header" go across instead of down. Then add <code>justify-content: space-between;</code>, this will make the two objects space out to the opposite sides of the screen. Its a little bit to close so we can add some padding to fix that. Add and padding of "0" on top and bottom and "50px" on each side. Your code should look like this now.</p> 
+            <pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+                
+.header {
+    height: 50px;
+    background: gray;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}</code></pre>
+
+    <p>Now we are going to style the anchor tags. We are going to remove the text text decoration by using <code>text-decoration: none;</code>, then change the colour to white by using <code>color: white;</code>, and finally we are goin to add some padding by using <code>padding: 10px 20px;</code>. Your CSS should look like this now.</p>
+            <pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+                
+.header {
+    height: 50px;
+    background: gray;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+}</code></pre>
+
+    <p>Now lets add a hover animation. We do it like this.</p>
+
+    <pre><code class="language-css">.header a:hover {
+}
+</code></pre>
+
+    <p>Now we can add the parameters we want to change. I'm going to change the background colour.</p>
+    <pre><code class="language-css">.header a:hover {
+    background: black;
+}
+</code></pre>
+    <p>Now we can add the transition duration im going to add this, <code>transition: background 0.4s ease;</code>. This will change the background color with a duration of 0.4 seconds smoothly. Your CSS should look like this.</p>
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+    
+.header {
+    height: 50px;
+    background: gray;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    transition: background 0.4s ease;
+}
+
+.header a:hover {
+    background: black;
+}</code></pre>
+
+    <p>Now we are going to style the unorganised list. Type this <code>.header ul {}</code>, and add <code>list-style: none;</code> to remove the dots, <code>display: flex;</code> to make the li's group in a row, a width of 250px and finally type <code>justify-content: space-between;</code> which will space the li's out evenly.</p>
+
+    <pre><code>* {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background: gray;
+    color: white;
+}
+    
+.header a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    transition: background 0.4s ease;
+}
+    
+.header a:hover {
+    background: black;
+}
+    
+.header ul {
+    list-style: none;
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}
+</code></pre>
+
+<img alt="Header with CSS" src="../content/header-with-css.png" style="height:400px;">
+
+    <p>Well done! You have now created your very own header using HTML and CSS.</p>
+
+</section>
+    </main>
+    <footer>
+        <p>© 2021 Thierry Waters</p>
+    </footer>
+</body>
+<script>
+    // When the user scrolls the page, execute myFunction
+        window.onscroll = function () { myFunction() };
+
+        // Get the header
+        var header = document.getElementById("header");
+        // Get the offset position of the navbar
+        var sticky = header.offsetTop;
+
+        // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll
+        position
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+                header.classList.remove("unsticky");
+
+
+            } else {
+                header.classList.remove("sticky");
+                header.classList.add("unsticky");
+
+            }
+        }
+</script>
+</html>
